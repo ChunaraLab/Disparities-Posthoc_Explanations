@@ -67,9 +67,9 @@ def plot_fidelity_metric_with_ci(results, title, mean_key, ci_key, save_path):
     plt.savefig(save_path, format='png', dpi=300)  # Save the figure
 
 
-train_base_path = '/Users/salman/Desktop/exp_qua/new_3_objective/dgp_final/plot_data/objective_3_final_no_removal/train'
+train_base_path = 'objective_4_data/'
 
-test_base_path = '/Users/salman/Desktop/exp_qua/new_3_objective/dgp_final/plot_data/objective_3_final_no_removal/test'
+test_base_path = 'objective_4_data/'
 
 
 alpha_values = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4]

@@ -78,6 +78,7 @@ def calculate_model_metrics(data, model):
 
 
 
+BASE_PATH = '/objective_1_data/'
 
 
 #generate data, fit model, and evaluate prediction metrics for DGP 1
@@ -89,7 +90,8 @@ def fit_and_evaluate_a(n, Mratio):
 
     # Save training datasets as .csv files
     file_name = f"training_data_ratio_{Mratio}.csv"
-    data_train.to_csv(file_name, index=False)
+    train_data_path = BASE_PATH + file_name
+    data_train.to_csv(train_data_path, index=False)
 
     
     # Split data into features and target
@@ -156,3 +158,6 @@ for ratio in ratios:
         print(f"  {metric}: {value}")
     print()  # Print a blank line for better readability between different percentages
 
+# Generate the testing dataset
+data_test = dgp1_a(n = 20000, Mratio = 0.5)
+data_test.to_csv('/objective_1_data/testing_data_objective_1.csv', index=False)

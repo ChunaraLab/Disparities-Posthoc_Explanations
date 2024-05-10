@@ -86,7 +86,7 @@ FILENAMES = [
 #     'training_data_-1.5.csv'
 # ]
 
-BASE_PATH = '/Users/salman/Desktop/exp_qua/new_3_objective/dgp_final/plot_data/objective-2-last-final/'
+BASE_PATH = '/objective_3_data/'
 
 
 

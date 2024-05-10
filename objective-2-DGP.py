@@ -42,6 +42,8 @@ def dgp1_b(n, L_threshold = -1.5, seed=123):
     return data
 
 
+BASE_PATH = '/objective_2_data/'
+
 #generate data, fit model, and evaluate metrics for DGP 2
 def fit_and_evaluate_b(n, L_threshold):
 
@@ -51,7 +53,8 @@ def fit_and_evaluate_b(n, L_threshold):
     
     # Save training datasets as .csv files
     file_name = f"training_data_ratio_{L_threshold}.csv"
-    data_train.to_csv(file_name, index=False)
+    train_data_path = BASE_PATH + file_name
+    data_train.to_csv(train_data_path, index=False)
 
 
     #How many M = 0 observations in training set
@@ -125,3 +128,8 @@ for threshold in L_t:
     for metric, value in model_metrics.items():
         print(f"  {metric}: {value}")
     print()  # Print a blank line for better readability between different percentages
+    
+
+# Generate the testing dataset
+data_test = dgp1_b(n = 20000, L_threshold = -10)
+data_test.to_csv('/objective_2_data/testing_data_objective_2.csv', index=False)

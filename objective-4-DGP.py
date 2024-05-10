@@ -12,10 +12,10 @@ from sklearn.model_selection import train_test_split
 # DGP for objective 4, strength of omitted covariate
 
 
-# Match file paths to those on Salman's computer
-train_base_path = '/Users/salman/Desktop/exp_qua/new_3_objective/dgp_final/plot_data/objective_3_final_no_removal/train'
+# File paths
+train_base_path = 'objective_4_data/'
 
-test_base_path = '/Users/salman/Desktop/exp_qua/new_3_objective/dgp_final/plot_data/objective_3_final_no_removal/test'
+test_base_path = 'objective_4_data/'
 
 
 def dgp4(n, alpha):

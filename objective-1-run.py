@@ -89,9 +89,9 @@ FILENAMES = [
 #     'training_data_ratio_0.1.csv'
 # ]
 
-BASE_PATH = '/Users/salman/Desktop/exp_qua/new_3_objective/dgp_final/plot_data/objective_1_final/case-a/'
+BASE_PATH = '/objective_1_data/'
 
-test_data_path = '/Users/salman/Desktop/exp_qua/new_3_objective/dgp_final/plot_data/objective_1_final/case-a/testing_data_objective_1a.csv'
+test_data_path = '/objective_1_data/testing_data_objective_1.csv'
 
 
 

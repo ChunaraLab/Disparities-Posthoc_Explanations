@@ -35,8 +35,10 @@ def dgp3(n, beta):
 
     return data
 
- # case A, black box model includes all features Ml, L , C and interaction between L and M
- def fit_and_evaluate_a(data, beta):
+BASE_PATH = '/objective_3_data/'
+
+# case A, black box model includes all features Ml, L , C and interaction between L and M
+def fit_and_evaluate_a(data, beta):
     #create interaction term
     data['L*M'] = data['L'] * data['M']
     
@@ -47,28 +49,22 @@ def dgp3(n, beta):
     # Split data into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)  # 70% training, 30% testing
 
-  
-    # Save data as .csv file for Salman
-    # X_train_name = f"DGP2_casea_beta{beta}_trainX.csv" # Generate the file name with the beta value
-    # X_train.to_csv(X_train_name, index=False)
-    
-    # Y_train_name = f"DGP2_casea_beta{beta}_trainY.csv" 
-    # y_train.to_csv(Y_train_name, index=False)
-    
-    # X_test_name = f"DGP2_casea_beta{beta}_testX.csv" 
-    # X_test.to_csv(X_test_name, index=False)
-    
-    # Y_test_name = f"DGP2_casea_beta{beta}_testY.csv" 
-    # y_test.to_csv(Y_test_name, index=False)
-
     # re-formatting code to export .csv files to match objective-3-run.py:
     # 1. create dataset for export purposes
     X_train_export = X_train
     X_train_export['Y'] = y_train
+    
+    X_test_export = X_test
+    X_test_export['Y'] = y_test
 
-    # 2. Save training datasets as .csv files
-    file_name = f"training_data_ratio_{beta}.csv"
-    X_train_export.to_csv(file_name, index=False)
+    # 2. Save datasets as .csv files
+    file_name = f"training_data_{beta}.csv"
+    train_data_path = BASE_PATH + file_name
+    data_train.to_csv(train_data_path, index=False)
+    
+    file_name = f"testing_data_{beta}.csv"
+    test_data_path = BASE_PATH + file_name
+    X_test_export.to_csv(test_data_path, index=False)
 
     
     # Fit logistic regression model on the training data
