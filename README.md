@@ -1,5 +1,5 @@
 
-# Explanation Quality of Synthetic Data
+# Machine Learning Explanation Quality
 
 This repository contains scripts for generating synthetic data and evaluating the explanation quality of this data across various metrics. The project is structured to run multiple objectives, each with its unique datasets and parameters.
 
